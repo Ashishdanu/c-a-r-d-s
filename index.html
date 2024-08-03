@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="card-container" class="bg-gray-100 "></div>
+    
+</body>
+</html>
+
+<script>
+    let users = [
+  {
+    id: 1,
+    name: "Leanne Graham",
+    username: "Bret",
+    email: "Sincere@april.biz",
+  },
+  {
+    id: 2,
+    name: "Ervin Howell",
+    username: "Antonette",
+    email: "Shanna@melissa.tv",
+  },
+  {
+    id: 3,
+    name: "Clementine Bauch",
+    username: "Samantha",
+    email: "Nathan@yesenia.net",
+  },
+  {
+    id: 4,
+    name: "Patricia Lebsack",
+    username: "Karianne",
+    email: "Julianne.OConner@kory.org",
+  },
+  {
+    id: 5,
+    name: "Chelsey Dietrich",
+    username: "Kamren",
+    email: "Lucio_Hettinger@annie.ca",
+  },
+  {
+    id: 6,
+    name: "Mrs. Dennis Schulist",
+    username: "Leopoldo_Corkery",
+    email: "Karley_Dach@jasper.info",
+  },
+  {
+    id: 7,
+    name: "Kurtis Weissnat",
+    username: "Elwyn.Skiles",
+    email: "Telly.Hoeger@billy.biz",
+  },
+  {
+    id: 8,
+    name: "Nicholas Runolfsdottir V",
+    username: "Maxime_Nienow",
+    email: "Sherwood@rosamond.me",
+  },
+  {
+    id: 9,
+    name: "Glenna Reichert",
+    username: "Delphine",
+    email: "Chaim_McDermott@dana.io",
+  },
+  {
+    id: 10,
+    name: "Clementina DuBuque",
+    username: "Moriah.Stanton",
+    email: "Rey.Padberg@karina.biz",
+  },
+];
+
+// use object to create cards
+function createcard(user){
+
+    // i am creating a div of my card//
+    let card = document.createElement('div');
+    card.className = 'card';
+    card.style.width = '18rem';
+
+    // creatng name element 
+    let name = document.createElement('h2') ;
+    name.innerText = user.name ;
+    card.appendChild(name);
+    // creatng username element
+    let username = document.createElement('h3');
+    username.innerText = user.username ;
+    card.appendChild(username);
+//  creating emailsection
+let email = document.createElement('h4');
+email.innerText= user.email ;
+card.appendChild(email);
+
+return card
+
+}
+
+function displaycards(users) {
+    let container = document.getElementById('card-container');
+    container.style.display='flex' ;
+    container.style.flexWrap='wrap' ;
+    container.style.justifyContent='space-between' ;
+
+    users.forEach(user => {
+        let cards = createcard(user); 
+        cards.style.margin='20px';
+        cards.style.backgroundColor='white' ;
+        cards.style.borderRadius='20px' ;
+        cards.style.boxShadow='0 0 10px rgba(0,0,0,0.5) ' ;
+        cards.style.textAlign='center'
+       
+        container.appendChild(cards);
+       
+        });
+        
+}
+displaycards(users);
+
+
+
+
+</script>
